@@ -10,7 +10,7 @@ import os
 
 app = FastAPI(title="Simple RAG Chatbot")
 
-API_KEY = os.getenv("OPENROUTER_API_KEY", "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")           # ← fill this
+API_KEY = "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"        # ← fill this
 OPENROUTER_CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_EMBED_URL = "https://openrouter.ai/api/v1/embeddings"
 
