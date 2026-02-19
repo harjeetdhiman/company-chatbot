@@ -10,8 +10,8 @@ import os
 
 app = FastAPI(title="Simple RAG Chatbot")
 
-# API_KEY = os.getenv("OPENROUTER_API_KEY", "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")           # ← fill this
-API_KEY = "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"           # ← fill this
+# API_KEY = os.getenv("OPENROUTER_API_KEY", "")           # ← fill this
+API_KEY = "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"           # ← fill this
 
 OPENROUTER_CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_EMBED_URL = "https://openrouter.ai/api/v1/embeddings"
@@ -102,10 +102,10 @@ Context (this is the ONLY information you can use):
         return "Sorry, something went wrong"
 
 
-#client = chromadb.Client()
+client = chromadb.Client()
 
-persist_dir = os.getenv("CHROMA_PERSIST_DIR", "./chroma_data") # add
-client = chromadb.PersistentClient(path=persist_dir) #add 
+#persist_dir = os.getenv("CHROMA_PERSIST_DIR", "./chroma_data") # add
+#client = chromadb.PersistentClient(path=persist_dir) #add 
 
 
 collection = client.get_or_create_collection("company")
